@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dog Page</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Get a Dog Image</h1>
+            </div>
+            <div class="input-group input-breed">
+                <input class='form-control' v-model="breed" @keyup.enter="getDog" placeholder="Type a breed">
+                <button v-on:click="getDog" class='btn btn-primary'>Search</button>
+            </div>
+            <div v-if="showError" class="text-center my-5">
+                <h2>No dogs found with breed {{foundBreed}}</h2>
+            </div>
+            <div v-if="showResult" class='result'>
+                <h2 class="my-5">Breed: {{foundBreed}}</h2>
+                <img class="image img-thumbnail" v-bind:src="dogImage">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="App.js"></script>
+</body>
+</html>

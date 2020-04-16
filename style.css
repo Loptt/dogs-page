@@ -1,0 +1,13 @@
+.input-breed {
+    width: 300px;
+}
+
+.image {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.result {
+    text-align: center;
+}
